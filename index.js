@@ -42,4 +42,9 @@ $.getJSON(API_URL, function (data) {
   htmlTable.appendChild(negativesElement);
   htmlTable.appendChild(deathsElement);
   htmlTable.appendChild(patientElement);
+
+  // Show last update on table caption
+  var lastUpdateData = `${data.lastUpdate}`;
+  var captionTable = document.getElementById("table-caption");
+  captionTable.innerHTML += "(" + lastUpdateData + ")";
 });
