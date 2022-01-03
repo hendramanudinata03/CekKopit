@@ -51,17 +51,18 @@ $.getJSON(LATEST_API_URL, function (data) {
   var patientElement = document.createElement("th");
   patientElement.innerHTML = addThousandsSeparator(patientData);
 
+  // Last Update
+  var lastUpdateData = `${data.lastUpdate}`;
+  var lastUpdateElement = document.createElement("th");
+  lastUpdateElement.innerHTML = trimLastUpdate(lastUpdateData);
+
   // Process the gathered data
   var htmlTable = document.getElementById("table-data");
   htmlTable.appendChild(positivesElement);
   htmlTable.appendChild(negativesElement);
   htmlTable.appendChild(deathsElement);
   htmlTable.appendChild(patientElement);
-
-  // Show last update on table caption
-  var lastUpdateData = `${data.lastUpdate}`;
-  var captionTable = document.getElementById("table-caption");
-  captionTable.innerHTML += "(" + trimLastUpdate(lastUpdateData) + ")";
+  htmlTable.appendChild(lastUpdateElement);
 });
 
 // #rewind-data-table
