@@ -10,29 +10,29 @@ function addThousandsSeparator(no) {
 
 /*
   Parse Indonesia' COVID-19 API with jQuery
-  API: https://data.covid19.go.id/public/api/update.json
+  API: https://apicovid19indonesia-v2.vercel.app/api/indonesia
   Code reference: https://zetcode.com/javascript/jsonurl/
 */
-var API_URL = "https://data.covid19.go.id/public/api/update.json";
+var API_URL = "https://apicovid19indonesia-v2.vercel.app/api/indonesia";
 
 $.getJSON(API_URL, function (data) {
   // Positives
-  var positivesData = `${data.update.total.jumlah_positif}`;
+  var positivesData = `${data.positif}`;
   var positivesElement = document.createElement("th");
   positivesElement.innerHTML = addThousandsSeparator(positivesData);
 
   // Negatives
-  var negativesData = `${data.update.total.jumlah_sembuh}`;
+  var negativesData = `${data.sembuh}`;
   var negativesElement = document.createElement("th");
   negativesElement.innerHTML = addThousandsSeparator(negativesData);
 
   // Deaths
-  var deathsData = `${data.update.total.jumlah_meninggal}`;
+  var deathsData = `${data.meninggal}`;
   var deathsElement = document.createElement("th");
   deathsElement.innerHTML = addThousandsSeparator(deathsData);
 
   // Patient
-  var patientData = `${data.update.total.jumlah_dirawat}`;
+  var patientData = `${data.dirawat}`;
   var patientElement = document.createElement("th");
   patientElement.innerHTML = addThousandsSeparator(patientData);
 
