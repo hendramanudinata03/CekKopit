@@ -9,6 +9,17 @@ function addThousandsSeparator(no) {
 }
 
 /*
+  Trim Last Update
+  Reference:
+  - https://stackoverflow.com/a/13634687
+  - https://aioos.wordpress.com/2013/07/02/add-thousand-separator-to-value-in-javascript/
+  - https://stackoverflow.com/a/32355056
+*/
+function trimLastUpdate(lastUpdate) {
+  return lastUpdate.split("T")[0];
+}
+
+/*
   Parse Indonesia' COVID-19 API with jQuery
   API:
   - https://apicovid19indonesia-v2.vercel.app/api/indonesia
@@ -50,7 +61,7 @@ $.getJSON(LATEST_API_URL, function (data) {
   // Show last update on table caption
   var lastUpdateData = `${data.lastUpdate}`;
   var captionTable = document.getElementById("table-caption");
-  captionTable.innerHTML += "(" + lastUpdateData + ")";
+  captionTable.innerHTML += "(" + trimLastUpdate(lastUpdateData) + ")";
 });
 
 // #rewind-data-table
@@ -79,7 +90,7 @@ $.getJSON(MORE_API_URL, function (data) {
     // Last updates
     var lastUpdateRewindData = `${data[data.length - i].tanggal}`;
     var lastUpdateRewindElement = document.createElement("th");
-    lastUpdateRewindElement.innerHTML = lastUpdateRewindData;
+    lastUpdateRewindElement.innerHTML = trimLastUpdate(lastUpdateRewindData);
 
     // Process the gathered data
     var tableRewindEntries = document.createElement("tr");
