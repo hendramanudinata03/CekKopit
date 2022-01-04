@@ -65,6 +65,13 @@ $.getJSON(LATEST_API_URL, function (data) {
   htmlTable.appendChild(lastUpdateElement);
 });
 
+// Arrays for chart.js
+var positivesRewindArray = [];
+var negativesRewindArray = [];
+var deathsRewindArray = [];
+var patientRewindArray = [];
+var lastUpdateRewindArray = [];
+
 // #rewind-data-table
 $.getJSON(MORE_API_URL, function (data) {
   for (let i = 1; i < 8; i++) {
@@ -104,5 +111,89 @@ $.getJSON(MORE_API_URL, function (data) {
     // Append all `<tr>` to `<tbody>`
     var htmlTable = document.getElementById("rewind-table-body");
     htmlTable.appendChild(tableRewindEntries);
+
+    // Add arrays entries for chart.js
+    positivesRewindArray[i - 1] = positivesRewindData;
+    negativesRewindArray[i - 1] = negativesRewindData;
+    deathsRewindArray[i - 1] = deathsRewindData;
+    patientRewindArray[i - 1] = patientRewindData;
+    lastUpdateRewindArray[i - 1] = trimLastUpdate(lastUpdateRewindData);
   }
+
+  // Charts configuration
+  lastUpdateRewindArrayReversed = lastUpdateRewindArray.reverse();
+
+  const chartPositivesData = {
+    labels: lastUpdateRewindArrayReversed,
+    datasets: [
+      {
+        label: "Positif",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: positivesRewindArray.reverse(),
+      },
+    ],
+  };
+  const chartPositivesConfig = {
+    type: "line",
+    data: chartPositivesData,
+    options: {},
+  };
+
+  const chartNegativesData = {
+    labels: lastUpdateRewindArrayReversed,
+    datasets: [
+      {
+        label: "Negatif",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: negativesRewindArray.reverse(),
+      },
+    ],
+  };
+  const chartNegativesConfig = {
+    type: "line",
+    data: chartNegativesData,
+    options: {},
+  };
+
+  const chartDeathsData = {
+    labels: lastUpdateRewindArrayReversed,
+    datasets: [
+      {
+        label: "Meninggal",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: deathsRewindArray.reverse(),
+      },
+    ],
+  };
+  const chartDeathsConfig = {
+    type: "line",
+    data: chartDeathsData,
+    options: {},
+  };
+
+  const chartPatientData = {
+    labels: lastUpdateRewindArrayReversed,
+    datasets: [
+      {
+        label: "Dirawat",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: patientRewindArray.reverse(),
+      },
+    ],
+  };
+  const chartPatientConfig = {
+    type: "line",
+    data: chartPatientData,
+    options: {},
+  };
+
+  // Render the chart
+  new Chart(document.getElementById("positivesChart").getContext("2d"), chartPositivesConfig);
+  new Chart(document.getElementById("negativesChart").getContext("2d"), chartNegativesConfig);
+  new Chart(document.getElementById("deathsChart").getContext("2d"), chartDeathsConfig);
+  new Chart(document.getElementById("patientChart").getContext("2d"), chartPatientConfig);
 });

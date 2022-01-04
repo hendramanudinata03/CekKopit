@@ -19,8 +19,6 @@
     ></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Main script -->
-    <script src="./index.js"></script>
   </head>
   <body class="text-center">
     <!-- Intro -->
@@ -93,6 +91,25 @@
         </div>
       </div>
     </div>
+    <!-- Chart -->
+    <div id="chart">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <canvas id="positivesChart"></canvas>
+          </div>
+          <div class="col-md-6">
+            <canvas id="negativesChart"></canvas>
+          </div>
+          <div class="col-md-6">
+            <canvas id="deathsChart"></canvas>
+          </div>
+          <div class="col-md-6">
+            <canvas id="patientChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer>
       <div class="container">
         <div class="row">
@@ -107,6 +124,10 @@
           </div>
         </div>
       </div>
+      <!-- chart.js -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+      <!-- Main script -->
+      <script src="./index.js"></script>
     </footer>
   </body>
 </html>
