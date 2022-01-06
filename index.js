@@ -128,8 +128,8 @@ $.getJSON(MORE_API_URL, function (data) {
     datasets: [
       {
         label: "Positif",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(0, 0, 0)",
+        borderColor: "rgb(0, 0, 0)",
         data: positivesRewindArray.reverse(),
       },
     ],
@@ -145,8 +145,8 @@ $.getJSON(MORE_API_URL, function (data) {
     datasets: [
       {
         label: "Negatif",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(0, 204, 0)",
+        borderColor: "rgb(0, 204, 0)",
         data: negativesRewindArray.reverse(),
       },
     ],
@@ -162,8 +162,8 @@ $.getJSON(MORE_API_URL, function (data) {
     datasets: [
       {
         label: "Meninggal",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(255, 0, 0)",
+        borderColor: "rgb(255, 0, 0)",
         data: deathsRewindArray.reverse(),
       },
     ],
@@ -179,8 +179,8 @@ $.getJSON(MORE_API_URL, function (data) {
     datasets: [
       {
         label: "Dirawat",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(255, 204, 0)",
+        borderColor: "rgb(255, 204, 0)",
         data: patientRewindArray.reverse(),
       },
     ],
