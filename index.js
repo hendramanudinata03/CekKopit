@@ -1,4 +1,11 @@
 /*
+  CekKopit Version
+*/
+const cekKopitVersion = "1.0";
+var introTitle = document.getElementById("intro-lead");
+introTitle.innerHTML += " " + "(" + "v" + cekKopitVersion + ")";
+
+/*
   Thousands separator
   Reference:
   - https://aioos.wordpress.com/2013/07/02/add-thousand-separator-to-value-in-javascript/
