@@ -121,73 +121,73 @@ $.getJSON(MORE_API_URL, function (data) {
   }
 
   // Charts configuration
+  positivesRewindArrayReversed = positivesRewindArray.reverse();
+  negativesRewindArrayReversed = negativesRewindArray.reverse();
+  deathsRewindArrayReversed = deathsRewindArray.reverse();
+  patientRewindArrayReversed = patientRewindArray.reverse();
   lastUpdateRewindArrayReversed = lastUpdateRewindArray.reverse();
 
-  const chartPositivesData = {
-    labels: lastUpdateRewindArrayReversed,
-    datasets: [
-      {
-        label: "Positif",
-        backgroundColor: "rgb(0, 0, 0)",
-        borderColor: "rgb(0, 0, 0)",
-        data: positivesRewindArray.reverse(),
-      },
-    ],
-  };
   const chartPositivesConfig = {
     type: "line",
-    data: chartPositivesData,
+    data: {
+      labels: lastUpdateRewindArrayReversed,
+      datasets: [
+        {
+          label: "Positif",
+          backgroundColor: "rgb(0, 0, 0)",
+          borderColor: "rgb(0, 0, 0)",
+          data: positivesRewindArrayReversed,
+        },
+      ],
+    },
     options: {},
   };
 
-  const chartNegativesData = {
-    labels: lastUpdateRewindArrayReversed,
-    datasets: [
-      {
-        label: "Negatif",
-        backgroundColor: "rgb(0, 204, 0)",
-        borderColor: "rgb(0, 204, 0)",
-        data: negativesRewindArray.reverse(),
-      },
-    ],
-  };
   const chartNegativesConfig = {
     type: "line",
-    data: chartNegativesData,
+    data: {
+      labels: lastUpdateRewindArrayReversed,
+      datasets: [
+        {
+          label: "Negatif",
+          backgroundColor: "rgb(0, 204, 0)",
+          borderColor: "rgb(0, 204, 0)",
+          data: negativesRewindArrayReversed,
+        },
+      ],
+    },
     options: {},
   };
 
-  const chartDeathsData = {
-    labels: lastUpdateRewindArrayReversed,
-    datasets: [
-      {
-        label: "Meninggal",
-        backgroundColor: "rgb(255, 0, 0)",
-        borderColor: "rgb(255, 0, 0)",
-        data: deathsRewindArray.reverse(),
-      },
-    ],
-  };
   const chartDeathsConfig = {
     type: "line",
-    data: chartDeathsData,
+    data: {
+      labels: lastUpdateRewindArrayReversed,
+      datasets: [
+        {
+          label: "Meninggal",
+          backgroundColor: "rgb(255, 0, 0)",
+          borderColor: "rgb(255, 0, 0)",
+          data: deathsRewindArrayReversed,
+        },
+      ],
+    },
     options: {},
   };
 
-  const chartPatientData = {
-    labels: lastUpdateRewindArrayReversed,
-    datasets: [
-      {
-        label: "Dirawat",
-        backgroundColor: "rgb(255, 204, 0)",
-        borderColor: "rgb(255, 204, 0)",
-        data: patientRewindArray.reverse(),
-      },
-    ],
-  };
   const chartPatientConfig = {
     type: "line",
-    data: chartPatientData,
+    data: {
+      labels: lastUpdateRewindArrayReversed,
+      datasets: [
+        {
+          label: "Dirawat",
+          backgroundColor: "rgb(255, 204, 0)",
+          borderColor: "rgb(255, 204, 0)",
+          data: patientRewindArrayReversed,
+        },
+      ],
+    },
     options: {},
   };
 
