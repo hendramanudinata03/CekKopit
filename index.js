@@ -53,8 +53,6 @@ $.getJSON(LATEST_API_URL, function (data) {
 
   // Last Update
   var lastUpdateData = `${data.lastUpdate}`;
-  var lastUpdateElement = document.createElement("th");
-  lastUpdateElement.innerHTML = trimLastUpdate(lastUpdateData);
 
   // Process the gathered data
   var htmlTable = document.getElementById("table-data");
@@ -62,7 +60,10 @@ $.getJSON(LATEST_API_URL, function (data) {
   htmlTable.appendChild(negativesElement);
   htmlTable.appendChild(deathsElement);
   htmlTable.appendChild(patientElement);
-  htmlTable.appendChild(lastUpdateElement);
+
+  // Show last update on table caption
+  var tableCaption = document.getElementById("table-caption");
+  tableCaption.innerHTML += "(" + trimLastUpdate(lastUpdateData) + ")";
 });
 
 // Arrays for chart.js
