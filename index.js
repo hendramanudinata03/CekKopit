@@ -45,10 +45,10 @@ $.ajax({
   dataType: "json",
   success: function (data) {
     // Hide loader and display tables and chart
+    document.getElementById("data-loader").style.display = "none";
     document.getElementById("data-table").style.display = "block";
     document.getElementById("rewind-data-table").style.display = "block";
     document.getElementById("chart").style.display = "block";
-    document.getElementById("data-loader").style.display = "none";
 
     // #data-table
     // Positives
@@ -208,5 +208,9 @@ $.ajax({
     new Chart(document.getElementById("negativesChart").getContext("2d"), chartNegativesConfig);
     new Chart(document.getElementById("deathsChart").getContext("2d"), chartDeathsConfig);
     new Chart(document.getElementById("patientChart").getContext("2d"), chartPatientConfig);
+  },
+  error: function () {
+    document.getElementById("data-loader-text").textContent = "Tidak dapat memuat data! Silahkan periksa koneksi internet Anda.";
+    console.error("Error, Pak!");
   },
 });

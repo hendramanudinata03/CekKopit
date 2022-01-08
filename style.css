@@ -9,3 +9,7 @@
 #chart {
   display: none;
 }
+
+#data-loader-text {
+  font-style: italic;
+}
