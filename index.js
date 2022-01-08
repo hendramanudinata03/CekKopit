@@ -28,44 +28,51 @@ function trimLastUpdate(lastUpdate) {
 
 /*
   Parse Indonesia' COVID-19 API with jQuery
-  API:
-  - https://apicovid19indonesia-v2.vercel.app/api/indonesia
-  - https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian
+  API: https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian
   Code reference: https://zetcode.com/javascript/jsonurl/
 */
-var LATEST_API_URL = "https://apicovid19indonesia-v2.vercel.app/api/indonesia";
-var MORE_API_URL = "https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian";
+var API_URL = "https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian";
 
-// #data-table
+// Arrays for chart.js
+var positivesRewindArray = [];
+var negativesRewindArray = [];
+var deathsRewindArray = [];
+var patientRewindArray = [];
+var lastUpdateRewindArray = [];
+
 $.ajax({
-  url: LATEST_API_URL,
+  url: API_URL,
   dataType: "json",
   success: function (data) {
-    // Hide loader and display table
+    // Hide loader and display tables and chart
     document.getElementById("data-table").style.display = "block";
+    document.getElementById("rewind-data-table").style.display = "block";
+    document.getElementById("chart").style.display = "block";
     document.getElementById("data-loader").style.display = "none";
+
+    // #data-table
     // Positives
-    var positivesData = `${data.positif}`;
+    var positivesData = `${data[data.length - 1].positif_kumulatif}`;
     var positivesElement = document.createElement("th");
     positivesElement.innerHTML = addThousandsSeparator(positivesData);
 
     // Negatives
-    var negativesData = `${data.sembuh}`;
+    var negativesData = `${data[data.length - 1].sembuh_kumulatif}`;
     var negativesElement = document.createElement("th");
     negativesElement.innerHTML = addThousandsSeparator(negativesData);
 
     // Deaths
-    var deathsData = `${data.meninggal}`;
+    var deathsData = `${data[data.length - 1].meninggal_kumulatif}`;
     var deathsElement = document.createElement("th");
     deathsElement.innerHTML = addThousandsSeparator(deathsData);
 
     // Patient
-    var patientData = `${data.dirawat}`;
+    var patientData = `${data[data.length - 1].dirawat_kumulatif}`;
     var patientElement = document.createElement("th");
     patientElement.innerHTML = addThousandsSeparator(patientData);
 
     // Last Update
-    var lastUpdateData = `${data.lastUpdate}`;
+    var lastUpdateData = `${data[data.length - 1].tanggal}`;
 
     // Process the gathered data
     var htmlTable = document.getElementById("table-data");
@@ -77,25 +84,8 @@ $.ajax({
     // Show last update on table caption
     var tableCaption = document.getElementById("table-caption");
     tableCaption.innerHTML += "(" + trimLastUpdate(lastUpdateData) + ")";
-  },
-});
 
-// Arrays for chart.js
-var positivesRewindArray = [];
-var negativesRewindArray = [];
-var deathsRewindArray = [];
-var patientRewindArray = [];
-var lastUpdateRewindArray = [];
-
-// #rewind-data-table
-$.ajax({
-  url: MORE_API_URL,
-  dataType: "json",
-  success: function (data) {
-    // Hide loader and display rewind table and chart
-    document.getElementById("rewind-data-table").style.display = "block";
-    document.getElementById("chart").style.display = "block";
-    document.getElementById("data-loader").style.display = "none";
+    // #rewind-data-table
     for (let i = 1; i < 8; i++) {
       // Positives
       var positivesRewindData = `${data[data.length - i].positif_kumulatif}`;
