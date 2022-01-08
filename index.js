@@ -41,6 +41,9 @@ $.ajax({
   url: LATEST_API_URL,
   dataType: "json",
   success: function (data) {
+    // Hide loader and display table
+    document.getElementById("data-table").style.display = "block";
+    document.getElementById("data-loader").style.display = "none";
     // Positives
     var positivesData = `${data.positif}`;
     var positivesElement = document.createElement("th");
@@ -89,6 +92,10 @@ $.ajax({
   url: MORE_API_URL,
   dataType: "json",
   success: function (data) {
+    // Hide loader and display rewind table and chart
+    document.getElementById("rewind-data-table").style.display = "block";
+    document.getElementById("chart").style.display = "block";
+    document.getElementById("data-loader").style.display = "none";
     for (let i = 1; i < 8; i++) {
       // Positives
       var positivesRewindData = `${data[data.length - i].positif_kumulatif}`;
