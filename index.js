@@ -3,7 +3,7 @@
 */
 const cekKopitVersion = "1.0";
 var introTitle = document.getElementById("intro-lead");
-introTitle.innerHTML += " " + "(" + "v" + cekKopitVersion + ")";
+introTitle.innerHTML += " (v" + cekKopitVersion + ")";
 
 /*
   Thousands separator
