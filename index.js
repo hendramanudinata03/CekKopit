@@ -1,7 +1,7 @@
 /*
   CekKopit Version
 */
-const cekKopitVersion = "1.0";
+const cekKopitVersion = "2.0";
 var introTitle = document.getElementById("intro-lead");
 introTitle.innerHTML += " (v" + cekKopitVersion + ")";
 

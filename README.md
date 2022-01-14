@@ -4,4 +4,4 @@ CekKopit adalah sebuah situs sederhana yang menampilkan data statistik kasus COV
 
 Situs CekKopit dibangun menggunakan _framework_ [Bootstrap](https://getbootstrap.com) sebagai _UI framework_ dan sedikit _custom CSS_.
 
-_Project_ ini dilisensikan dibawah MIT License, lihat [LICENSE](https://github.com/hendramanudinata03/CekKopit/blob/v1.0/LICENSE) untuk detail lisensi.
+_Project_ ini dilisensikan dibawah MIT License, lihat [LICENSE](https://github.com/hendramanudinata03/CekKopit/blob/v2.0/LICENSE) untuk detail lisensi.
