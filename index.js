@@ -28,10 +28,10 @@ function trimLastUpdate(lastUpdate) {
 
 /*
   Parse Indonesia' COVID-19 API with jQuery
-  API: https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian
+  API: https://test-api.cekkopit.manudinata.me/api/indonesia/harian
   Code reference: https://zetcode.com/javascript/jsonurl/
 */
-var API_URL = "https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian";
+var API_URL = "https://test-api.cekkopit.manudinata.me/api/indonesia/harian";
 
 // Arrays for chart.js
 var positivesRewindArray = [];
