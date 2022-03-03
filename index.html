@@ -25,9 +25,9 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
-  <body>
+  <body class="text-center">
     <!-- Intro -->
-    <div id="intro" class="text-center">
+    <div id="intro">
       <div class="container">
         <div class="row">
           <div class="col mt-3">
@@ -37,7 +37,6 @@
         </div>
       </div>
     </div>
-
     <!-- Loader -->
     <div id="data-loader" class="text-center">
       <p id="data-loader-text" class="lead">Memuat data...</p>
@@ -86,7 +85,7 @@
       </div>
     </div>
     <!-- 2. Rewind data table -->
-    <div id="rewind-data-table" class="text-center">
+    <div id="rewind-data-table">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -115,7 +114,7 @@
       </div>
     </div>
     <!-- Chart -->
-    <div id="chart" class="text-center">
+    <div id="chart">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -133,72 +132,10 @@
         </div>
       </div>
     </div>
-    <!-- README, documentation, etc -->
-    <div id="docs">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <hr />
-            <h1>Tentang <b>CekKopit</b></h1>
-            <p>
-              <b>CekKopit</b> adalah sebuah situs sederhana yang menampilkan statistik data kasus COVID-19 di Indonesia untuk hari ini dan 7 hari
-              kebelakang. CekKopit mengambil data dari <i>mirror</i> API pemerintah dan diatur sedemikian rupa agar mudah dibaca.
-            </p>
-            <p>
-              Nama CekKopit sendiri diambil dari nama virus <i>COVID-19</i> dan diubah sedikit menjadi <i>Kopit</i> yang biasa masyarakat sebut,
-              <i>hehe :D</i>.
-            </p>
-            <h2><i>Kenapa</i> Buat Lagi? 'Kan ada <a href="https://covid19.go.id">situs portal dari pemerintah</a>?</h2>
-            <p>Ada tiga alasan saya membuat situs ini:</p>
-            <ol>
-              <li>Karena situs tersebut lambat untuk diakses di daerah saya (atau setidaknya rumah saya),</li>
-              <li>
-                Untuk menyediakan kembali situs portal yang hanya berisi data dan statistik, sederhana, tanpa berita dan kontak <i>segala macem</i>,
-                dan
-              </li>
-              <li>Hobi, <i>ngasah</i> kemampuan coding, dan... ya <i>gitu deh</i>!</li>
-            </ol>
-            <h2>Teknologi Yang Digunakan</h2>
-            <p>
-              Situs ini menggunakan <i>framework</i> <a href="https://getbootstrap.com">Bootstrap</a> sebagai <i>UI framework</i>. Untuk pengambilan
-              data, dilakukan dengan Javascript menggunakan library <a href="https://jquery.com">jQuery</a>.
-            </p>
-            <h2>Dari mana data-data tersebut diambil?</h2>
-            <p>
-              Data-data tersebut diambil dari data kasus COVID-19 di Indonesia yang disediakan oleh pemerintah, lalu diatur sedemikian rupa agar mudah
-              dibaca.
-            </p>
-            <h2>[RARE CASE] <i>Kenapa</i> Data-nya Tidak Sesuai / Salah?</h2>
-            <p>
-              Data yang ditampilkan sesuai dengan data API pemerintah. Karenanya, data-data yang tampil menjadi tanggung jawab pemerintah. Situs ini
-              tidak mengubah/memanipulasi data apapun, melainkan hanya menampilkan data yang <i>pure</i> berasal dari pemerintah.
-            </p>
-            <h2>Saya Punya Kritik / Saran, atau Ingin Melaporkan Kesalahan</h2>
-            <p>
-              Silahkan kontak saya via <a href="mailto:hendra@manudinata.me">Email</a> atau <a href="https://t.me/hendramanudinata03">Telegram</a>.
-            </p>
-            <h2>Apakah Kode Sumber Situs Ini Dibuat Publik?</h2>
-            <p>Tentu! Kode sumber situs ini tersedia di <a href="https://github.com/hendramanudinata03/CekKopit">laman GitHub saya</a>.</p>
-            <h2>Credits and Thanks</h2>
-            <ul>
-              <li>Allah SWT, yang membimbing saya ke jalan yang benar,</li>
-              <li>Keluarga dan teman-teman sekolah, yang selalu mendukung saya, apapun hasilnya,</li>
-              <li>
-                Bapak <a href="https://github.com/sandhikagalih">Sandhika Galih</a> @
-                <a href="https://www.youtube.com/c/WebProgrammingUNPAS">Web Programming Unpas</a>, yang menjadi <i>guru virtual</i> saya,
-              </li>
-              <li>Mas <a href="https://github.com/reacto11mecha">Ezra Khairan Permana</a>, yang mau membantu saya soal Javascript di Telegram,</li>
-              <li>Forum <a href="https://stackoverflow.com">StackOverflow</a>, yang tentunya membantu saya memecahkan masalah, dan</li>
-              <li>Semua yang berkontribusi, terima kasih banyak!</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col text-center">
+          <div class="col">
             <p>
               &copy;
               <script>
