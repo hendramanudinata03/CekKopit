@@ -3,7 +3,7 @@
 */
 const cekKopitVersion = "2.0";
 var introTitle = document.getElementById("intro-lead");
-introTitle.innerHTML += " (v" + cekKopitVersion + ")";
+introTitle.innerHTML += ` (v${cekKopitVersion})`
 
 /*
   Thousands separator
@@ -202,7 +202,7 @@ $.ajax({
     new Chart(document.getElementById("negativesChart").getContext("2d"), chartNegativesConfig);
     new Chart(document.getElementById("deathsChart").getContext("2d"), chartDeathsConfig);
     new Chart(document.getElementById("patientChart").getContext("2d"), chartPatientConfig);
-    
+
     // Hide loader and finally display tables and chart
     document.getElementById("data-loader").style.display = "none";
     document.getElementById("data-table").style.display = "block";
