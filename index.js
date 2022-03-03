@@ -43,7 +43,7 @@ var lastUpdateRewindArray = [];
 $.ajax({
   url: API_URL,
   dataType: "json",
-  success: function (data) {
+  success: (data) => {
     // #data-table
     // Positives
     var positivesData = `${data[data.length - 1].positif_kumulatif}`;
@@ -209,7 +209,7 @@ $.ajax({
     document.getElementById("rewind-data-table").style.display = "block";
     document.getElementById("chart").style.display = "block";
   },
-  error: function () {
+  error: () => {
     document.getElementById("data-loader-text").textContent = "Tidak dapat memuat data! Silahkan periksa koneksi internet Anda.";
     console.error("Error, Pak!");
   },
