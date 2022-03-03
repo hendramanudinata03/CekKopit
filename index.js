@@ -211,6 +211,5 @@ $.ajax({
   },
   error: () => {
     document.getElementById("data-loader-text").textContent = "Tidak dapat memuat data! Silahkan periksa koneksi internet Anda.";
-    console.error("Error, Pak!");
   },
 });
