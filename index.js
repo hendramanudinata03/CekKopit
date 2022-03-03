@@ -3,7 +3,7 @@
 */
 const cekKopitVersion = "2.0";
 var introTitle = document.getElementById("intro-lead");
-introTitle.innerHTML += ` (v${cekKopitVersion})`
+introTitle.innerHTML += ` (v${cekKopitVersion})`;
 
 /*
   Thousands separator
@@ -44,40 +44,26 @@ $.ajax({
   url: API_URL,
   dataType: "json",
   success: (data) => {
-    // #data-table
+    // #data-cards
     // Positives
     var positivesData = `${data[data.length - 1].positif_kumulatif}`;
-    var positivesElement = document.createElement("th");
+    var positivesElement = document.getElementsByClassName("card-title")[0];
     positivesElement.innerHTML = addThousandsSeparator(positivesData);
 
     // Negatives
     var negativesData = `${data[data.length - 1].sembuh_kumulatif}`;
-    var negativesElement = document.createElement("th");
+    var negativesElement = document.getElementsByClassName("card-title")[1];
     negativesElement.innerHTML = addThousandsSeparator(negativesData);
 
     // Deaths
     var deathsData = `${data[data.length - 1].meninggal_kumulatif}`;
-    var deathsElement = document.createElement("th");
+    var deathsElement = document.getElementsByClassName("card-title")[2];
     deathsElement.innerHTML = addThousandsSeparator(deathsData);
 
     // Patient
     var patientData = `${data[data.length - 1].dirawat_kumulatif}`;
-    var patientElement = document.createElement("th");
+    var patientElement = document.getElementsByClassName("card-title")[3];
     patientElement.innerHTML = addThousandsSeparator(patientData);
-
-    // Last Update
-    var lastUpdateData = `${data[data.length - 1].tanggal}`;
-
-    // Process the gathered data
-    var htmlTable = document.getElementById("table-data");
-    htmlTable.appendChild(positivesElement);
-    htmlTable.appendChild(negativesElement);
-    htmlTable.appendChild(deathsElement);
-    htmlTable.appendChild(patientElement);
-
-    // Show last update on table caption
-    var tableCaption = document.getElementById("table-caption");
-    tableCaption.innerHTML += "(" + trimLastUpdate(lastUpdateData) + ")";
 
     // #rewind-data-table
     for (let i = 1; i < 8; i++) {
@@ -205,7 +191,7 @@ $.ajax({
 
     // Hide loader and finally display tables and chart
     document.getElementById("data-loader").style.display = "none";
-    document.getElementById("data-table").style.display = "block";
+    document.getElementById("data-cards").style.display = "block";
     document.getElementById("rewind-data-table").style.display = "block";
     document.getElementById("chart").style.display = "block";
   },

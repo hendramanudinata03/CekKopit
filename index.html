@@ -42,31 +42,44 @@
     <div id="data-loader" class="text-center">
       <p id="data-loader-text" class="lead">Memuat data...</p>
     </div>
-    <!-- 1. Data table -->
-    <div id="data-table" class="text-center">
+    <!-- 1. Data cards -->
+    <div id="data-cards" class="text-center">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="table-responsive">
-              <table class="table caption-top">
-                <caption id="table-caption">
-                  Data
-                </caption>
-                <thead class="table-dark">
-                  <tr id="table-header">
-                    <th scope="col">Positif</th>
-                    <th scope="col">Sembuh</th>
-                    <th scope="col">Meninggal</th>
-                    <th scope="col">Dirawat</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="table-data">
-                    <!-- PLACEHOLDER -->
-                    <!-- Values defined in ./index.js -->
-                  </tr>
-                </tbody>
-              </table>
+          <!-- Positives -->
+          <div class="col-md-6">
+            <div class="card-positives">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text text-center">Positif</p>
+              </div>
+            </div>
+          </div>
+          <!-- Negatives -->
+          <div class="col-md-6">
+            <div class="card-negatives">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text text-center">Positif</p>
+              </div>
+            </div>
+          </div>
+          <!-- Deaths -->
+          <div class="col-md-6">
+            <div class="card-deaths">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text text-center">Positif</p>
+              </div>
+            </div>
+          </div>
+          <!-- Patient -->
+          <div class="col-md-6">
+            <div class="card-patient">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text text-center">Positif</p>
+              </div>
             </div>
           </div>
         </div>
